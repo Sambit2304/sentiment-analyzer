@@ -1,0 +1,18 @@
+.git
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+
+# Not needed at runtime (Dockerfile only copies backend/frontend/models/requirements)
+training_data_analysis.ipynb
+twitter_training.csv
+twitter_validation.csv
+
+# Local artifacts
+*.png
+*.jpg
+*.jpeg
+*.gif
+

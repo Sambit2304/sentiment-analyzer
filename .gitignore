@@ -1,0 +1,31 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.log
+
+# Jupyter / notebooks
+.ipynb_checkpoints/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Testing
+.pytest_cache/
+
+# Do NOT ignore model artifacts:
+# - models/tfidf_vectorizer.joblib
+# - models/sentiment_model.joblib
+# - models/label_encoder.joblib
+
+# Optional local notebook artifacts/images
+*.png
+*.jpg
+*.jpeg
+*.gif
+

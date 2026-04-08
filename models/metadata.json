@@ -1,0 +1,14 @@
+{
+  "model_name": "LinearSVC",
+  "label_classes": [
+    "Irrelevant",
+    "Negative",
+    "Neutral",
+    "Positive"
+  ],
+  "vectorizer_max_features": 50000,
+  "ngram_range": [
+    1,
+    2
+  ]
+}

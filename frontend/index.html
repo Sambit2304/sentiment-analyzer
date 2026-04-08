@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- In production the backend serves this page from the same origin, so API is relative. -->
+    <meta name="api-base" content="/" />
+    <title>Twitter Sentiment Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950 text-slate-100">
+    <div class="min-h-screen flex items-center justify-center p-6">
+      <div
+        class="w-full max-w-xl rounded-2xl border border-slate-800/60 bg-slate-900/40 backdrop-blur shadow-xl"
+      >
+        <div class="p-6">
+          <h1 class="text-2xl font-semibold text-slate-50">Twitter Sentiment Analyzer</h1>
+          <p class="mt-1 text-sm text-slate-300">
+            Paste text and get instant sentiment.
+          </p>
+
+          <form id="predictForm" class="mt-5">
+            <label class="block text-sm font-medium text-slate-200" for="textInput">
+              Text
+            </label>
+            <textarea
+              id="textInput"
+              rows="5"
+              class="mt-2 w-full rounded-xl border border-slate-800 bg-slate-950/40 px-4 py-3 text-slate-100 placeholder-slate-500 shadow-sm outline-none focus:ring-2 focus:ring-indigo-500/40"
+              placeholder="Type or paste your text here..."
+            ></textarea>
+
+            <div class="mt-4 flex items-center gap-3">
+              <button
+                id="submitBtn"
+                type="submit"
+                class="inline-flex items-center justify-center rounded-xl bg-indigo-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 disabled:opacity-60 disabled:hover:bg-indigo-500"
+              >
+                <span id="submitLabel">Analyze</span>
+                <svg
+                  id="spinner"
+                  class="ml-2 hidden h-5 w-5 animate-spin text-white"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    class="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="4"
+                  ></circle>
+                  <path
+                    class="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  ></path>
+                </svg>
+              </button>
+
+              <p id="statusMsg" class="text-sm text-rose-200"></p>
+            </div>
+
+            <div
+              id="resultWrap"
+              class="mt-6 opacity-0 translate-y-1 pointer-events-none transition duration-300"
+            >
+              <div class="flex items-center justify-between gap-4">
+                <span id="sentimentBadge" class="inline-flex items-center rounded-full border px-3 py-1 text-xs font-semibold bg-slate-800/60 border-slate-700/60 text-slate-100">
+                  Neutral
+                </span>
+                <span class="text-xs text-slate-300">
+                  Code: <span id="sentimentCode" class="font-semibold text-slate-100">2</span>
+                </span>
+              </div>
+
+              <div class="mt-3 text-sm">
+                <span class="text-slate-300">Cleaned:</span>
+                <span id="cleanedText" class="ml-2 text-slate-100 break-words"></span>
+              </div>
+
+              <div class="mt-2 text-sm text-slate-300">
+                <span class="text-slate-300">Probabilities:</span>
+                <span id="probabilities" class="ml-2 font-medium"></span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
