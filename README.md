@@ -11,7 +11,7 @@ The backend also serves the frontend UI (so you can deploy as a single Docker se
 
 Example deployment (Render):
 
-- `https://sentiment-analyzer-j05i.onrender.com`
+- [https://sentiment-analyzer-j05i.onrender.com](https://sentiment-analyzer-j05i.onrender.com)
 
 After deploying your own copy (see **Deploy to Render**), open the service URL in your browser.
 
